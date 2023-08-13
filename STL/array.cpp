@@ -9,12 +9,12 @@ int main(){
     //this the method of getting size
     int size = a.size();
 
-    for(int i = 0;i<size;i++){
-        cout<<a[i]<<" ";
-    }
-    // for(int i:a){
-    //     cout<<i<<" ";
+    // for(int i = 0;i<size;i++){
+    //     cout<<a[i]<<" ";
     // }
+    for(int i:a){
+        cout<<i<<" ";
+    }
     cout<<endl;
     // For getting the particular index element
     cout<<"Element at index no. 2 is "<<a.at(2)<<endl;

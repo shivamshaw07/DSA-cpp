@@ -7,7 +7,7 @@ int binarysrearch(int arr[],int size,int key){
     while(start <= end){
         int mid = start + (end-start)/2;
         if(arr[mid] == key){
-            return mid;
+            return 1;
         }
 
         //go to left ya ri8 wala part
