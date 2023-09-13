@@ -26,3 +26,11 @@ int main(){
     cout<<"The first element is -->> "<<a.front()<<" -- Last element of the array is -->> "<<a.back()<<endl;
     return 0;
 }
+
+// Four components of STL
+/*
+1. Alogirithm
+2. Containers
+3. Fuctions
+4. Iteration
+*/
