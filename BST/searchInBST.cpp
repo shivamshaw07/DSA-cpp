@@ -96,6 +96,36 @@ void Inorder(Node* root){
     Inorder(root -> right);
 }
 
+bool findInBST(Node* root,int target){
+    if(root == NULL) return false;
+
+    if(root -> data == target) return true;
+
+    if(target > root -> data) return findInBST(root -> right,target);
+    else return findInBST(root -> left,target);
+}
+
+int minVal(Node* root){
+    if(root == NULL) return -1;
+    Node* temp = root;
+
+    while(temp -> left != NULL){
+        temp = temp -> left;
+    }
+
+    return temp->data;
+}
+int maxVal(Node* root){
+    if(root == NULL) return -1;
+    Node* temp = root;
+
+    while(temp -> right != NULL){
+        temp = temp -> right;
+    }
+
+    return temp->data;
+}
+
 int main(){
     Node* root = NULL;
     cout<<"Enter data -> ";
@@ -108,6 +138,8 @@ int main(){
     postorder(root);
     cout<<"\n printing Inorder : \n";
     Inorder(root);
-
+    cout<<"Checking presence -->> "<<findInBST(root,10)<<endl;
+    cout<<"Minimum value : "<<minVal(root)<<endl;
+    cout<<"Maximum value : "<<maxVal(root);
     return 0;
 }
