@@ -60,7 +60,7 @@ void Inorder(Node* root){
 
 int predecessor(int n,Node* root){
     if(root == NULL ) return -1;
-    Node* temp = root;
+    /* Node* temp = root;
     // Recursive method
     while(temp -> data != n){
         if(temp -> data > n) temp = temp -> left;
@@ -74,12 +74,21 @@ int predecessor(int n,Node* root){
         if(temp -> right == NULL) break;
         temp = temp -> right;
     }
-    return temp-> data;
+    return temp-> data; */
+
+
+    //correct method and w'll get output always by using inorder
+
+    for(int i = 0; i < v.size();i++){
+        if(v[i] == n && i != 0) return v[i-1];
+    }
+
+    return -1;
 }
 int successor(int n,Node* root){
     if(root == NULL ) return -1;
     Node* temp = root;
-    // Recursive method
+    /* // Recursive method
     while(temp -> data != n){
         if(temp -> data > n) temp = temp -> left;
         else temp = temp -> right;
@@ -92,7 +101,17 @@ int successor(int n,Node* root){
         if(temp -> left == NULL) break;
         temp = temp -> left;
     }
-    return temp-> data;
+    return temp-> data;*/
+
+
+    //correct method and w'll get output always by using inorder
+
+    for(int i = 0; i < v.size();i++){
+        if(v[i] == n && i != v.size()-1) return v[i+1];
+    }
+
+    return -1;
+
 }
 
 int main(){
