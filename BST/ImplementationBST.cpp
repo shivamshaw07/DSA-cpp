@@ -96,6 +96,41 @@ void Inorder(Node* root){
     Inorder(root -> right);
 }
 
+Node* minV(Node* root){
+    Node* temp = root;
+    while(temp!=NULL){
+        temp = temp -> left;
+    }
+    return temp;
+}
+
+Node* deleteNode(Node* root,int key){
+    if(root == NULL) return root;
+
+    else if(key > root->data){
+        return root -> right= deleteNode( root -> right,key);
+    }
+    else if(key < root->data){
+        return root -> left= deleteNode( root -> left,key);
+    }
+
+    else{
+        if(root -> left == NULL){
+            return root -> right;
+        }
+        else if(root -> right == NULL){
+            return root -> left;
+        }
+
+        else{
+            Node* temp = minV(root -> right);
+            root -> data = temp -> data;
+            root -> right = deleteNode(root->right,temp->data);
+        }
+    }
+    return root;
+}
+
 int main(){
     Node* root = NULL;
     cout<<"Enter data -> ";
@@ -108,6 +143,8 @@ int main(){
     postorder(root);
     cout<<"\n printing Inorder : \n";
     Inorder(root);
-
+    deleteNode(root,18);
+    cout<<endl;
+    Inorder(root);
     return 0;
 }
