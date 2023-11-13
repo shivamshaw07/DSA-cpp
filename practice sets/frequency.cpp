@@ -9,18 +9,10 @@ int main(){
     for(int i = 0; i < 9; i++){
         mp[arr[i]]++;
     }
-    int cnt = 0;
+    
     for(auto it:mp){
-        //for duplicate
-        /*if(it.second>1){
-            cnt++;
-        cout<<it.second;
-        }*/
-        if(it.second==1){
-            cout<<it.first<<" ";
-        }
-
+       cout<<it.first<<" -> "<<it.second<<endl;
     }
-    // cout<<endl<<cnt;
+
     return 0;
 }
